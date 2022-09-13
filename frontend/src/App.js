@@ -1,11 +1,21 @@
-import logo from "./logo.svg";
 import "./App.css";
+import "antd/dist/antd.min.css";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import HomePage from "./pages/HomePage";
+import ItemPage from "./pages/ItemPage";
+import CartPage from "./pages/CartPage";
 
 function App() {
   return (
-    <div className="App">
-      <h4>POS - MERNN</h4>
-    </div>
+    <>
+      <BrowserRouter>
+        <Routes>
+          <Route exact path="/" element={<HomePage />} />
+          <Route exact path="/items" element={<ItemPage />} />
+          <Route exact path="/cart" element={<CartPage />} />
+        </Routes>
+      </BrowserRouter>
+    </>
   );
 }
 
